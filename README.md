@@ -1,1 +1,1 @@
-# web-core
+https://reheora.github.io/web-core
