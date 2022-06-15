@@ -8,10 +8,11 @@
     </head>
     <body>
         <header class="header">
-            <nav class="header__nav">
+            <nav class="header__nav nav">
                 <ul class="nav__list1">
-                    <li class="list1__elem1"><a href=""><img src="image/burger.svg" alt="Меню"></a></li>
-                    <li class="list1__elem2"><a href=""><img src="image/Group.svg" alt="Логотип"></a></li>
+                    <li class="list1__elem1 list1__elem1_active"><img class="list__img" src="image/burger.svg" alt="Меню"></li>
+                    <!-- <li class="list1__elem2"><img src="image/back.svg" alt="Меню"></li> -->
+                    <li class="list1__elem3"><a href=""><img src="image/Group.svg" alt="Логотип"></a></li>
                 </ul>
                 <ul class="nav__list2">
                     <li class="list2__elem1"><a href=""><img src="image/call.svg" alt=""></a></li>
@@ -21,6 +22,37 @@
                     <li class="list2__elem5"><a href=""><img src="image/checkstatus.svg" alt="Статус ремонта"></a></li>
                 </ul>
             </nav>
+            <div class="burger">
+                <!-- <ul class="burger__list burger__list_1">
+                    <li class="burger__item"><img src="image/back.svg" alt=""></li>
+                    <li class="burger__item"><img src="image/Group.svg" alt=""></li>
+                    <li class="burger__item"><img src="image/search.svg" alt=""></li>
+                </ul> -->
+                <ul class="burger__list burger__list_1">
+                    <li class="burger__item burger__item_active">Ремонт техники</li>
+                    <li class="burger__item">Услуги и сервисы</li>
+                    <li class="burger__item">Корпоративным клиентам</li>
+                    <li class="burger__item">Продавцам техники</li>
+                    <li class="burger__item">Партнерам</li>
+                    <li class="burger__item">Производителям</li>
+                    <li class="burger__item">Наши сервисные центры</li>
+                    <li class="burger__item">Контакты</li>
+                </ul>
+                <ul class="burger__list burger__list_2">
+                    <li class="burger__item"><img src="image/call.svg" alt=""></li>
+                    <li class="burger__item"><img src="image/chat.svg" alt=""></li>
+                    <li class="burger__item"><img src="image/profile.svg" alt=""></li>
+                </ul>
+                <ul class="burger__list burger__list_3">
+                    <li class="burger__item"><a href="mailto:mail@cps.com" class="burger__link">mail@cps.com</a></li>
+                    <li class="burger__item"><a href="tel:8 800 890 8900" class="burger__link burger__link_bold">8 800 890 8900</a></li>
+                </ul>
+                <ul class="burger__list burger__list_4">
+                    <li class="burger__item burger__item_active">RU</li>
+                    <li class="burger__item">EN</li>
+                    <li class="burger__item">CH</li>
+                </ul>
+            </div>
         </header>
         <main>
             <div class="title">
@@ -62,18 +94,33 @@
             </section>
         </main>
         <script>
-            let button = document.querySelector(".section__read-more");
+            // read more
+            let readMoreBtn = document.querySelector(".section__read-more");
             let aboutBrend = document.querySelector(".section__about-brend");
-            let counter = 1;
+            let counterReadMore = 1;
 
-            button.onclick = function() {
-                if (counter % 2 !== 0) {
+            readMoreBtn.onclick = function() {
+                if (counterReadMore % 2 !== 0) {
                     aboutBrend.style.height = "auto";
-                    console.log(1);
                 } else {
                     aboutBrend.style.height = "90px";
                 }
-                counter++;
+                counterReadMore++;
+            }
+            // burger
+            let burgerBtn = document.querySelector('.list1__elem1');
+            let burgerMenu = document.querySelector('.burger');
+            let burgerImg = document.querySelector('.list__img')
+            let counterBurger = 1
+
+            burgerBtn.onclick = function() {
+                burgerMenu.classList.toggle('burger_active')
+                if (counterBurger % 2 !== 0) {
+                    burgerImg.src = 'image/back.svg'
+                } else {
+                    burgerImg.src = 'image/burger.svg'
+                }
+                counterBurger++
             }
         </script>
     </body>
