@@ -250,6 +250,8 @@ body {
     background-color: #F8F8F8;
 }
 
+/* Burger */
+
 .burger {
     width: 320px;
     position: absolute;
@@ -398,6 +400,12 @@ body {
         margin-right: 25px;
 
         border-radius: 10px;
+    }
+}
+
+@media (min-width: 400px) {
+    .burger {
+        height: 100vw;
     }
 }
 
